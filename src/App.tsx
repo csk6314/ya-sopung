@@ -6,6 +6,7 @@ import HomePage from "./pages/home";
 import FestivalPage from "./pages/festival";
 import AccommodationPage from "./pages/accommodation";
 import TouristAttrPage from "./pages/tourist-attr";
+import MyPage from "./pages/my";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
         {
           path: "tourist-attr",
           element: <TouristAttrPage />,
+        },
+        {
+          path: "my",
+          element: <MyPage />,
         },
       ],
     },
