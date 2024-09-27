@@ -23,4 +23,9 @@ export const GlobalStyleCss = css`
   * {
     font-family: "Pretendard-Regular" !important;
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;

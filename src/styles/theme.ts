@@ -7,6 +7,7 @@ const colors = {
   textDarkgray: "#393939",
   textLightgray: "#626262",
   textWhite: "#FFFFFF",
+  textBlack: "#000000",
 };
 
 const fontSize = {
