@@ -9,9 +9,11 @@ const colors = {
   textWhite: "#FFFFFF",
   textBlack: "#000000",
 
-  //border
-  selectBorder: "rgba(234, 234, 234, 0.34)",
-  inputBorder: "#EAEAEA",
+  //select
+  inputBorder: "rgba(234, 234, 234, 0.34)",
+  inputBorderFocus: "rgba(255,255,255,0.7)",
+  "inputBorder-2": "rgba(136,136,136,0.34)",
+  "inputBorderFocus-2": "rgba(0,0,0,0.5)",
 };
 
 const fontSize = {

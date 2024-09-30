@@ -1,20 +1,37 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   position: relative;
 `;
 
-export const SelectBox = styled.div<{ $opened: boolean }>`
+export const SelectBox = styled.div<{ $opened: boolean; $usage: string }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 11rem;
   padding: 1rem;
-  border: 1px solid ${({ theme }) => theme.colors.selectBorder};
-  border-radius: 0.5rem;
-  color: ${({ theme }) => theme.colors.textWhite};
+  border: 1px solid
+    ${({ theme, $opened }) =>
+      $opened
+        ? theme.colors["inputBorderFocus-2"]
+        : theme.colors["inputBorder-2"]};
+  border-radius: 1rem;
+  color: ${({ theme }) => theme.colors.textBlack};
   user-select: none;
   cursor: pointer;
+
+  //home
+  ${({ $usage, theme, $opened }) => {
+    if ($usage === "home") {
+      return css`
+        border: 1px solid
+          ${$opened ? theme.colors.inputBorderFocus : theme.colors.inputBorder};
+        color: ${({ theme }) => theme.colors.textWhite};
+        border-radius: 0.5rem;
+      `;
+    }
+  }}
+
   & > * {
     opacity: 0.8;
   }

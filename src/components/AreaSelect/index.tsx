@@ -10,7 +10,11 @@ import { useAreaStore } from "@/store/area";
 //constant
 import { AREA_CODE } from "@/constant/area";
 
-const AreaSelect = () => {
+interface Props {
+  usage?: "default" | "home";
+}
+
+const AreaSelect = ({ usage = "default" }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const listRef = useRef<HTMLDivElement>(null);
   const area = useAreaStore((state) => state.area);
@@ -36,6 +40,7 @@ const AreaSelect = () => {
   return (
     <S.Wrapper ref={listRef}>
       <S.SelectBox
+        $usage={usage}
         $opened={isOpen}
         onClick={() => {
           setIsOpen(!isOpen);

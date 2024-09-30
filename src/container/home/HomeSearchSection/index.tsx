@@ -26,9 +26,9 @@ const HomeSearchSection = () => {
 
         <S.SeachDiv>
           {/** Select */}
-          <AreaSelect />
+          <AreaSelect usage="home" />
           {/** Input */}
-          <SearchInput />
+          <SearchInput usage="home" />
         </S.SeachDiv>
       </S.Wrapper>
     </S.SearchContainer>
