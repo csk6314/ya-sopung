@@ -8,7 +8,7 @@ import SearchInput from "./SearchInput";
 //style
 import * as S from "./index.style";
 
-const HomeSearchContainer = () => {
+const HomeSearchSection = () => {
   const [searchCategory, setSearchCategory] = useState<number>(15);
   return (
     <S.SearchContainer>
@@ -35,4 +35,4 @@ const HomeSearchContainer = () => {
   );
 };
 
-export default HomeSearchContainer;
+export default HomeSearchSection;
