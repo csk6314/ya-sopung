@@ -11,7 +11,7 @@ const colors = {
 
   //border
   selectBorder: "rgba(234, 234, 234, 0.34)",
-  inputBorder: "#FFFFFF",
+  inputBorder: "#EAEAEA",
 };
 
 const fontSize = {
