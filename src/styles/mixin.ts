@@ -5,3 +5,9 @@ export const WrapperStyle = css`
   max-width: ${({ theme }) => theme.sectionSize.lg};
   margin: 0 auto;
 `;
+
+export const FlexCenter = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
