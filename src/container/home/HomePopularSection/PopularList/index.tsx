@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 //component
-import AreaCard from "../AreaCard";
+import AreaCard from "../../../../components/AreaCard";
 
 //style
 import { SwiperWrapper } from "./index.style";

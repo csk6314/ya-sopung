@@ -1,6 +1,5 @@
-import HomePopularSection from "@/components/HomePopularSection";
-import HomeSearchSection from "@/components/HomeSearchSection";
-import React from "react";
+import HomePopularSection from "@/container/home/HomePopularSection";
+import HomeSearchSection from "@/container/home/HomeSearchSection";
 
 const Home = () => {
   return (

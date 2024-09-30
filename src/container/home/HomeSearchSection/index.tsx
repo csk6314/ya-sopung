@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 //components
-import AreaSelect from "../AreaSelect";
+import AreaSelect from "../../../components/AreaSelect";
 import CategoryTab from "./CategoryTab";
-import SearchInput from "./SearchInput";
+import SearchInput from "../../../components/SearchInput";
 
 //style
 import * as S from "./index.style";
