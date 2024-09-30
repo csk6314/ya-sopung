@@ -1,5 +1,7 @@
+import Home from "@/container/home";
+
 const HomePage = () => {
-  return <div>홈페이지</div>;
+  return <Home />;
 };
 
 export default HomePage;
