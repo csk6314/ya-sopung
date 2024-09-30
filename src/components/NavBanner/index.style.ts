@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TitleText2 } from "@/styles/common/TitleText";
 import { WrapperStyle } from "@/styles/mixin";
-export const Banner = styled.section<{ bannerImage: string }>`
+export const Banner = styled.section<{ $bannerImage: string }>`
   color: white;
   width: 100%;
   background-image: linear-gradient(
@@ -9,7 +9,7 @@ export const Banner = styled.section<{ bannerImage: string }>`
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.7)
     ),
-    url(${({ bannerImage }) => bannerImage});
+    url(${({ $bannerImage }) => $bannerImage});
 
   background-size: cover;
 `;
@@ -38,5 +38,7 @@ export const TitleBox = styled.div`
     color: rgba(255, 255, 255, 0.5);
   }
 `;
+
+export const Main = styled.main``;
 
 export const TitleText = styled(TitleText2)``;
