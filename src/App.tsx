@@ -7,6 +7,7 @@ import FestivalPage from "./pages/festival";
 import AccommodationPage from "./pages/accommodation";
 import TouristAttrPage from "./pages/tourist-attr";
 import MyPage from "./pages/my";
+import NavBanner from "./components/NavBanner";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,16 +20,22 @@ function App() {
           element: <HomePage />,
         },
         {
-          path: "festival",
-          element: <FestivalPage />,
-        },
-        {
-          path: "accommodation",
-          element: <AccommodationPage />,
-        },
-        {
-          path: "tourist-attr",
-          element: <TouristAttrPage />,
+          path: "",
+          element: <NavBanner />,
+          children: [
+            {
+              path: "festival",
+              element: <FestivalPage />,
+            },
+            {
+              path: "accommodation",
+              element: <AccommodationPage />,
+            },
+            {
+              path: "tourist-attr",
+              element: <TouristAttrPage />,
+            },
+          ],
         },
         {
           path: "my",
