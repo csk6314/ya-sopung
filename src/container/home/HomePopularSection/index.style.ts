@@ -1,10 +1,9 @@
 import { TitleText1 } from "@/styles/common/TitleText";
+import { WrapperStyle } from "@/styles/mixin";
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-  width: calc(100% - 4rem);
-  max-width: ${({ theme }) => theme.sectionSize.lg};
-  margin: 0 auto;
+  ${WrapperStyle}
   padding: 8rem 0;
   display: flex;
   flex-direction: column;

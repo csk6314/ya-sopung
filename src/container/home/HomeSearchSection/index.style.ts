@@ -1,4 +1,5 @@
 import { TitleText1 } from "@/styles/common/TitleText";
+import { WrapperStyle } from "@/styles/mixin";
 import styled from "styled-components";
 
 export const SearchContainer = styled.section`
@@ -8,9 +9,7 @@ export const SearchContainer = styled.section`
 `;
 
 export const Wrapper = styled.div`
-  width: calc(100% - 4rem);
-  max-width: ${({ theme }) => theme.sectionSize.lg};
-  margin: 0 auto;
+  ${WrapperStyle}
   display: flex;
   flex-direction: column;
   align-items: center;

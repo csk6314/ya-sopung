@@ -1,3 +1,4 @@
+import { WrapperStyle } from "@/styles/mixin";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
@@ -9,9 +10,7 @@ const Header = styled.header`
 `;
 
 const Wrapper = styled.div`
-  width: calc(100% - 4rem);
-  max-width: ${({ theme }) => theme.sectionSize.lg};
-  margin: 0 auto;
+  ${WrapperStyle}
   padding: 1rem;
   display: flex;
   justify-content: space-between;
