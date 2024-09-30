@@ -11,6 +11,7 @@ const colors = {
 
   //border
   selectBorder: "rgba(234, 234, 234, 0.34)",
+  inputBorder: "#FFFFFF",
 };
 
 const fontSize = {
@@ -31,10 +32,15 @@ const mediaSize = {
   "2xl": "screen and (max-width: '1536px')",
 };
 
+const sectionSize = {
+  lg: "1280px",
+};
+
 const theme = {
   colors,
   fontSize,
   mediaSize,
+  sectionSize,
 };
 
 export default theme;
