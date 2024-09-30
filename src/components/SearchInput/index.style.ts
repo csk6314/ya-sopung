@@ -3,18 +3,7 @@ import styled, { css } from "styled-components";
 export const InputWrapper = styled.div<{ $usage: string; $focused: boolean }>`
   display: flex;
   align-items: center;
-  border: 1.5px solid
-    ${({ theme, $focused }) =>
-      $focused
-        ? theme.colors["inputBorderFocus-2"]
-        : theme.colors["inputBorder-2"]};
   padding-right: 1.5rem;
-  border-radius: 1rem;
-  color: ${({ theme }) => theme.colors.textBlack};
-
-  & > svg {
-    opacity: 0.3;
-  }
 
   ${({ $usage, $focused, theme }) => {
     if ($usage === "home") {
@@ -29,6 +18,18 @@ export const InputWrapper = styled.div<{ $usage: string; $focused: boolean }>`
         }
       `;
     }
+
+    return css`
+      border-radius: 1rem;
+      color: ${theme.colors.textBlack};
+      border: 1.5px solid
+        ${$focused
+          ? theme.colors["inputBorderFocus-2"]
+          : theme.colors["inputBorder-2"]};
+      & > svg {
+        opacity: 0.3;
+      }
+    `;
   }}
 `;
 
