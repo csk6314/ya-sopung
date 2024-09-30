@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
+const Header = styled.header`
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 const Wrapper = styled.div`
   width: calc(100% - 4rem);
-  max-width: 1280px;
+  max-width: ${({ theme }) => theme.sectionSize.lg};
   margin: 0 auto;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
 `;
 
 const Logo = styled.h1`
@@ -53,4 +57,4 @@ const NavItem = styled(Link)<{ $isActive: boolean }>`
   }}
 `;
 
-export default { Wrapper, Logo, NavList, NavItem };
+export default { Header, Wrapper, Logo, NavList, NavItem };
