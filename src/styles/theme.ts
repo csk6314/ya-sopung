@@ -8,6 +8,9 @@ const colors = {
   textLightgray: "#626262",
   textWhite: "#FFFFFF",
   textBlack: "#000000",
+
+  //border
+  selectBorder: "rgba(234, 234, 234, 0.34)",
 };
 
 const fontSize = {
