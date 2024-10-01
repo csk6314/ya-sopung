@@ -8,6 +8,7 @@ import AccommodationPage from "./pages/accommodation";
 import TouristAttrPage from "./pages/tourist-attr";
 import MyPage from "./pages/my";
 import NavBanner from "./components/NavBanner";
+import DetailPage from "./pages/detail";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,6 +37,10 @@ function App() {
               element: <TouristAttrPage />,
             },
           ],
+        },
+        {
+          path: "detail/:id",
+          element: <DetailPage />,
         },
         {
           path: "my",
