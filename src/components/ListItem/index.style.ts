@@ -10,7 +10,7 @@ export const Wrapper = styled.article`
 
 export const Thumbnail = styled.div`
   width: 16rem;
-  background-image: url("${NoImage}");
+  background-image: url(${NoImage});
   background-repeat: no-repeat;
   background-position: center;
   background-color: #d9d9d9;
