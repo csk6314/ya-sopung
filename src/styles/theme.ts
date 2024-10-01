@@ -8,6 +8,9 @@ const colors = {
   textLightgray: "#626262",
   textWhite: "#FFFFFF",
   textBlack: "#000000",
+  "textParagraph-1": "rgba(0,0,0,0.65)",
+  "textParagraph-2": "rgba(0,0,0,0.5)",
+  "textParagraph-3": "#626262",
 
   //input
   inputBorder: "rgba(234, 234, 234, 0.34)",
@@ -30,12 +33,12 @@ const fontSize = {
 };
 
 const mediaSize = {
-  xs: "screen and (max-width: '400px')",
-  sm: "screen and (max-width: '640px')",
-  md: "screen and (max-width: '768px')",
-  lg: "screen and (max-width: '1024px')",
-  xl: "screen and (max-width: '1280px')",
-  "2xl": "screen and (max-width: '1536px')",
+  xs: "screen and (max-width: 400px)",
+  sm: "screen and (max-width: 640px)",
+  md: "screen and (max-width: 768px)",
+  lg: "screen and (max-width: 1024px)",
+  xl: "screen and (max-width: 1280px)",
+  "2xl": "screen and (max-width: 1536px)",
 };
 
 const sectionSize = {
