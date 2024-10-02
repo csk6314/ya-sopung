@@ -42,19 +42,20 @@ export const SelectBox = styled.div<{ $opened: boolean; $usage: string }>`
 `;
 
 export const OptionList = styled.ul<{ $opened: boolean }>`
-  position: absolute;
   display: ${({ $opened }) => ($opened ? "block" : "none")};
+  position: absolute;
   bottom: 20%;
-  max-height: 20rem;
-  overflow-y: scroll;
-  transform: translateY(105%);
   left: 0;
-  background-color: ${({ theme }) => theme.colors.textWhite};
+  z-index: 10;
   width: 100%;
+  max-height: 20rem;
   padding: 1rem;
+  background-color: ${({ theme }) => theme.colors.textWhite};
   color: ${({ theme }) => theme.colors.textBlack};
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+  overflow-y: scroll;
+  transform: translateY(105%);
 
   &::-webkit-scrollbar {
     display: block;
