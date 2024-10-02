@@ -7,6 +7,8 @@ import SearchInput from "../../../components/SearchInput";
 
 //style
 import * as S from "./index.style";
+
+//constant
 import { TContentType, TYPE_PLACEHOLDER } from "@/constant/content";
 
 const HomeSearchSection = () => {
