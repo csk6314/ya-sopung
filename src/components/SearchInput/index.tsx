@@ -5,9 +5,10 @@ import * as S from "./index.style";
 
 interface Props {
   usage?: "default" | "home";
+  placeholder?: string;
 }
 
-const SearchInput = ({ usage = "default" }: Props) => {
+const SearchInput = ({ usage = "default", placeholder }: Props) => {
   const [keyword, setKeyword] = useState<string>("");
   const [focused, setFocused] = useState<boolean>(false);
 
@@ -20,6 +21,7 @@ const SearchInput = ({ usage = "default" }: Props) => {
       <S.Input
         onChange={handleOnChange}
         value={keyword}
+        placeholder={placeholder}
         onFocus={() => {
           setFocused(true);
         }}

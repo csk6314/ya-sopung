@@ -42,4 +42,8 @@ export const Input = styled.input`
   outline: none;
   font: inherit;
   font-size: ${({ theme }) => theme.fontSize.sm};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.inputBorder};
+  }
 `;
