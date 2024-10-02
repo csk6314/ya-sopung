@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
+# 야 소풍 어때? 😄
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+`전국 여행 지원 프로그램(여행 지원금, 할인 혜택 정보 등)과 여행 정보(관광지, 문화시설, 축제 정보 등)를 종합적으로 다루는 서비스입니다.`
 
-Currently, two official plugins are available:
+## 기술스택 ⚒️
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React + Vite + Typescript
+- Tanstack(React) Query
+- Zustand
+- Styled-Components
+- Axios
+- Swiper
 
-## Expanding the ESLint configuration
+## 진행 상황
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [x] 프로젝트 셋업 ( 패키지 설치, 라우터 세팅 등)
+- [x] 레이아웃 구성
+- [x] 공통 컴포넌트 및 스타일링 구현
+- [x] 컨테이너 및 페이지 구현
+- [ ] API 환경 세팅 (Axios, ReactQuery)
+- [ ] API(서버 데이터) 적용
+- [ ] 기타 기능 구현 (찜 기능 등)
