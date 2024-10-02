@@ -22,5 +22,6 @@ export const TabButton = styled.button<{ $active: boolean }>`
       $active ? theme.colors.textWhite : "transparent"};
     width: 100%;
     height: 2px;
+    transition: 0.3s;
   }
 `;

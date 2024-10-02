@@ -7,9 +7,10 @@ import SearchInput from "../../../components/SearchInput";
 
 //style
 import * as S from "./index.style";
+import { TContentType, TYPE_PLACEHOLDER } from "@/constant/content";
 
 const HomeSearchSection = () => {
-  const [searchCategory, setSearchCategory] = useState<number>(15);
+  const [searchCategory, setSearchCategory] = useState<TContentType>(15);
   return (
     <S.SearchContainer>
       <S.Wrapper>
@@ -28,7 +29,10 @@ const HomeSearchSection = () => {
           {/** Select */}
           <AreaSelect usage="home" />
           {/** Input */}
-          <SearchInput usage="home" />
+          <SearchInput
+            usage="home"
+            placeholder={TYPE_PLACEHOLDER[searchCategory]}
+          />
         </S.SeachDiv>
       </S.Wrapper>
     </S.SearchContainer>

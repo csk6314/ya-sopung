@@ -4,11 +4,11 @@ import { SetStateAction } from "react";
 import * as S from "./index.style";
 
 //constant
-import { SEARCH_CATEGORY } from "@/constant/content";
+import { SEARCH_CATEGORY, TContentType } from "@/constant/content";
 
 interface Props {
-  searchCategory: number;
-  setSearchCategory: React.Dispatch<SetStateAction<number>>;
+  searchCategory: TContentType;
+  setSearchCategory: React.Dispatch<SetStateAction<TContentType>>;
 }
 
 const CategoryTab = ({ searchCategory, setSearchCategory }: Props) => {
