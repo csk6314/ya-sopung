@@ -3,20 +3,20 @@ type TCategory = {
   typeCode: TContentType;
 };
 
-export type TContentType = 12 | 15 | 32;
+export type TContentType = "12" | "15" | "32";
 
 export const SEARCH_CATEGORY: TCategory[] = [
   {
     title: "행사",
-    typeCode: 15,
+    typeCode: "15",
   },
   {
     title: "숙소",
-    typeCode: 32,
+    typeCode: "32",
   },
   {
     title: "관광지",
-    typeCode: 12,
+    typeCode: "12",
   },
 ];
 

@@ -12,7 +12,7 @@ import * as S from "./index.style";
 import { TContentType, TYPE_PLACEHOLDER } from "@/constant/content";
 
 const HomeSearchSection = () => {
-  const [searchCategory, setSearchCategory] = useState<TContentType>(15);
+  const [searchCategory, setSearchCategory] = useState<TContentType>("15");
   return (
     <S.SearchContainer>
       <S.Wrapper>
