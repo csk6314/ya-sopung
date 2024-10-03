@@ -30,7 +30,6 @@ const AreaSelect = ({ usage = "default" }: Props) => {
       }
     };
     document.addEventListener("click", handleDocumentClick);
-    listRef.current?.children[1].scrollTo({ top: 0 });
 
     return () => {
       document.removeEventListener("click", handleDocumentClick);
@@ -46,7 +45,7 @@ const AreaSelect = ({ usage = "default" }: Props) => {
           setIsOpen(!isOpen);
         }}
       >
-        <span>{area}</span>
+        <span>{area.name}</span>
         <IoIosArrowDown />
       </S.SelectBox>
       <S.OptionList $opened={isOpen}>
@@ -54,7 +53,10 @@ const AreaSelect = ({ usage = "default" }: Props) => {
           <S.OptionItem
             key={area.code}
             onClick={() => {
-              setArea(area.name);
+              setArea({
+                name: area.name,
+                code: area.code,
+              });
               setIsOpen(false);
             }}
           >

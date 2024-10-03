@@ -1,17 +1,25 @@
 import { create } from "zustand";
 
+type TArea = {
+  code: string;
+  name: string;
+};
+
 interface State {
-  area: string;
+  area: TArea;
 }
 
 interface Actions {
   actions: {
-    setArea: (area: string) => void;
+    setArea: (area: TArea) => void;
   };
 }
 
-const initialState = {
-  area: "서울",
+const initialState: State = {
+  area: {
+    code: "0",
+    name: "전체",
+  },
 };
 
 export const useAreaStore = create<State & Actions>((set) => ({

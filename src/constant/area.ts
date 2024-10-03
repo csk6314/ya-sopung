@@ -1,5 +1,9 @@
 export const AREA_CODE = [
   {
+    code: "0",
+    name: "전체",
+  },
+  {
     code: "1",
     name: "서울",
   },
