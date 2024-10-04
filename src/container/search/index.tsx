@@ -1,28 +1,49 @@
 import AreaSelect from "@/components/AreaSelect";
 import * as S from "./index.style";
 import SearchInput from "@/components/SearchInput";
-
-import { useLocation } from "react-router-dom";
-import { ROUTES } from "@/constant/routes";
+import useParams from "@/hooks/useParams";
+import { CTYPE_CONSTANT } from "@/constant/content";
+import useSearchList from "@/hooks/useSearchList";
+import Spinner from "@/components/Spinner";
+import ListItem from "@/components/ListItem";
 
 const SearchContainer = () => {
-  const { pathname } = useLocation();
-  const contentType =
-    ROUTES.find((route) => route.href === pathname)?.contentType ?? "15";
+  const { contentType, keyword, area } = useParams();
+
+  const {
+    items,
+    isError,
+    isFetchingNextPage,
+    isLoading,
+    ref: observerRef,
+  } = useSearchList({
+    keyword,
+    areaCode: area.code,
+    contentTypeId: contentType,
+  });
 
   return (
     <S.Container>
       <S.Wrapper>
         <h3>
-          <em>서울특별시</em>의 <em>'서울뮤직페스티벌'</em>에 대한 검색
-          결과입니다.
+          {keyword ? (
+            <>
+              <em>{area.name === "전체" ? "모든 지역" : area.name}</em>의{" "}
+              <em>'서울뮤직페스티벌'</em>에 대한 검색 결과입니다.
+            </>
+          ) : (
+            <>
+              <em>{area.name === "전체" ? "모든 지역" : area.name}</em>의{" "}
+              <em>{CTYPE_CONSTANT[contentType].tag}</em> 알아보기
+            </>
+          )}
         </h3>
         <S.SearchDiv>
           <AreaSelect />
           <SearchInput contenttypeid={contentType} />
         </S.SearchDiv>
         <S.SearchList>
-          {/* {items.map((item) => (
+          {items.map((item) => (
             <ListItem
               contentid={item.contentid}
               key={item.contentid}
@@ -31,9 +52,11 @@ const SearchContainer = () => {
               addr1={item.addr1}
               addr2={item.addr2}
             />
-          ))} */}
+          ))}
         </S.SearchList>
-        <button onClick={() => {}}>더 보기</button>
+        <S.LoadingWrapper>
+          {isFetchingNextPage ? <Spinner /> : <div ref={observerRef} />}
+        </S.LoadingWrapper>
       </S.Wrapper>
     </S.Container>
   );
