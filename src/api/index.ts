@@ -72,6 +72,45 @@ export const getSearchKeyword = async ({
   });
 };
 
+export const getSearchArea = async ({
+  pageNo,
+  contentTypeId,
+  areaCode,
+}: {
+  pageNo: number;
+  contentTypeId: string;
+  areaCode: string;
+}): Promise<KeywordData[]> => {
+  const {
+    data: {
+      response: {
+        body: {
+          items: { item: items },
+          numOfRows,
+        },
+      },
+    },
+  } = await api.get<APIResponse<KeywordData>>("/areaBasedList1", {
+    params: {
+      numOfRows: 5,
+      pageNo,
+      listYN: "Y",
+      arrange: "D",
+      contentTypeId,
+      areaCode,
+      ...COMMON_PARAM,
+    },
+  });
+
+  if (numOfRows < 1) {
+    return [];
+  }
+
+  return items.map(({ contentid, title, firstimage, addr1, addr2 }) => {
+    return { contentid, title, firstimage, addr1, addr2 };
+  });
+};
+
 export const getCommonDetail = async (
   contentId: string
 ): Promise<CommonDetailData> => {
