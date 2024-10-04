@@ -20,18 +20,28 @@ export const SEARCH_CATEGORY: TCategory[] = [
   },
 ];
 
-export const TAG: {
-  [k in TContentType]: string;
-} = {
-  12: "관광지",
-  15: "행사/축제",
-  32: "숙박시설",
+type TContentConstant = {
+  tag: string;
+  placeholder: string;
+  router: string;
 };
 
-export const TYPE_PLACEHOLDER: {
-  [k in TContentType]: string;
+export const CTYPE_CONSTANT: {
+  [k in TContentType]: TContentConstant;
 } = {
-  12: "지역 관광지 찾아보기",
-  15: "지역 축제 찾아보기",
-  32: "지역 숙박시설 찾아보기",
+  12: {
+    tag: "관광지",
+    placeholder: "지역 관광지 찾아보기",
+    router: "/tourist-attr",
+  },
+  15: {
+    tag: "행사/축제",
+    placeholder: "지역 축제 찾아보기",
+    router: "/festival",
+  },
+  32: {
+    tag: "숙박시설",
+    placeholder: "지역 숙박시설 찾아보기",
+    router: "/accommodation",
+  },
 };
