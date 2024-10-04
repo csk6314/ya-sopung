@@ -12,6 +12,10 @@ const useParams = () => {
   const code = searchParam.get("area") ?? "0";
   const area = AREA_CODE.find((ac) => ac.code === code) ?? AREA_CODE[0];
 
+  if (area.code === "0") {
+    area.code = "";
+  }
+
   return { contentType, keyword, area };
 };
 
