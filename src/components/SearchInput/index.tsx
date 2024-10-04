@@ -38,7 +38,7 @@ const SearchInput = ({
       area: area.code,
     });
 
-    if (keyword) {
+    if (keyword.trim()) {
       searchParams.append("keyword", keyword);
     }
 
