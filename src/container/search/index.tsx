@@ -1,8 +1,15 @@
 import AreaSelect from "@/components/AreaSelect";
 import * as S from "./index.style";
 import SearchInput from "@/components/SearchInput";
-import ListItem from "@/components/ListItem";
+
+import { useLocation } from "react-router-dom";
+import { ROUTES } from "@/constant/routes";
+
 const SearchContainer = () => {
+  const { pathname } = useLocation();
+  const contentType =
+    ROUTES.find((route) => route.href === pathname)?.contentType ?? "15";
+
   return (
     <S.Container>
       <S.Wrapper>
@@ -12,11 +19,21 @@ const SearchContainer = () => {
         </h3>
         <S.SearchDiv>
           <AreaSelect />
-          <SearchInput />
+          <SearchInput contenttypeid={contentType} />
         </S.SearchDiv>
         <S.SearchList>
-          <ListItem />
+          {/* {items.map((item) => (
+            <ListItem
+              contentid={item.contentid}
+              key={item.contentid}
+              title={item.title}
+              firstimage={item.firstimage}
+              addr1={item.addr1}
+              addr2={item.addr2}
+            />
+          ))} */}
         </S.SearchList>
+        <button onClick={() => {}}>더 보기</button>
       </S.Wrapper>
     </S.Container>
   );

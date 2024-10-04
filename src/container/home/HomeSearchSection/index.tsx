@@ -9,7 +9,7 @@ import SearchInput from "../../../components/SearchInput";
 import * as S from "./index.style";
 
 //constant
-import { TContentType, TYPE_PLACEHOLDER } from "@/constant/content";
+import { TContentType, CTYPE_CONSTANT } from "@/constant/content";
 
 const HomeSearchSection = () => {
   const [searchCategory, setSearchCategory] = useState<TContentType>("15");
@@ -33,7 +33,8 @@ const HomeSearchSection = () => {
           {/** Input */}
           <SearchInput
             usage="home"
-            placeholder={TYPE_PLACEHOLDER[searchCategory]}
+            placeholder={CTYPE_CONSTANT[searchCategory].placeholder}
+            contenttypeid={searchCategory}
           />
         </S.SeachDiv>
       </S.Wrapper>
