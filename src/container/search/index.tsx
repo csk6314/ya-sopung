@@ -55,7 +55,11 @@ const SearchContainer = () => {
           ))}
         </S.SearchList>
         <S.LoadingWrapper>
-          {isFetchingNextPage ? <Spinner /> : <div ref={observerRef} />}
+          {isFetchingNextPage || isLoading ? (
+            <Spinner />
+          ) : (
+            <div ref={observerRef} />
+          )}
         </S.LoadingWrapper>
       </S.Wrapper>
     </S.Container>

@@ -38,5 +38,6 @@ export const SearchList = styled.div`
 `;
 
 export const LoadingWrapper = styled.div`
+  padding-top: 4rem;
   ${FlexCenter};
 `;
