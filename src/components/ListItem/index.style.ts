@@ -8,10 +8,12 @@ export const Wrapper = styled.article`
   position: relative;
 `;
 
-export const Thumbnail = styled.div`
+export const Thumbnail = styled.div<{ $imgURL: string }>`
   width: 16rem;
-  background-image: url(${NoImage});
+  background-image: ${({ $imgURL }) => ($imgURL ? `url(${$imgURL})` : "")},
+    url(${NoImage});
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   background-color: #d9d9d9;
   border-radius: 0.5rem;
@@ -22,15 +24,15 @@ export const Description = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 0.5rem;
-  padding: 1.5rem 0;
+  row-gap: 1rem;
+  padding: 3rem 0;
 
   & > h3 {
     font-size: 1.25rem;
     font-weight: 700;
   }
 
-  & > p {
+  /* & > p {
     margin-top: 1rem;
     font-size: 0.875rem;
     text-overflow: ellipsis;
@@ -41,13 +43,14 @@ export const Description = styled.div`
     -webkit-line-clamp: 2; // 원하는 라인수
     -webkit-box-orient: vertical;
     height: 1.75rem;
-  }
+  } */
 `;
 
 export const UserItems = styled.div`
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
+  transform: translateY(-50%);
   font-size: 1rem;
   display: flex;
   align-items: center;

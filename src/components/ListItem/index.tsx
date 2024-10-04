@@ -2,24 +2,26 @@ import Button from "../Button";
 import LikeButton from "../Button/LikeButton";
 import * as S from "./index.style";
 
-const ListItem = () => {
+import { KeywordData } from "@/api/api";
+
+const ListItem = ({
+  contentid,
+  title,
+  firstimage,
+  addr1,
+  addr2,
+}: KeywordData) => {
   return (
     <S.Wrapper>
-      <S.Thumbnail />
+      <S.Thumbnail $imgURL={firstimage} />
       <S.Description>
-        <h3>서울 뮤직 페스티벌</h3>
-        <span>2024.09.12</span>
-        <span>서울시 노원구</span>
-        <p>
-          워케이션 프로그램은 근로자가 여행과 휴가를 동시에 즐기는 워케이션을
-          하며 지원 혜택을 받을 수 있는 프로그램입니다.워케이션 프로그램은
-          근로자가 여행과 휴가를 동시에 즐기는 워케이션을 하며 지원 혜택을 받을
-        </p>
+        <h3>{title}</h3>
+        <span>{addr1}</span>
+        <span>{addr2 === "" ? "-" : addr2}</span>
       </S.Description>
       <S.UserItems>
         <LikeButton liked={true} />
         <Button skin="primary">상세보기</Button>
-        <Button skin="default">D - 55</Button>
       </S.UserItems>
     </S.Wrapper>
   );
