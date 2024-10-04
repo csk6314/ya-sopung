@@ -20,10 +20,13 @@ interface UseSearchListProps {
 const searchListQueryKey = ({
   keyword,
   areaCode,
-}: Omit<UseSearchListProps, "contentTypeId">) => {
+  contentTypeId,
+}: UseSearchListProps) => {
   const queryKeyObj: {
     [k: string]: string;
-  } = {};
+  } = {
+    contentTypeId,
+  };
   if (keyword) {
     queryKeyObj["keyword"] = keyword;
   }
@@ -48,7 +51,7 @@ const useSearchList = ({
       QueryKey,
       number
     >({
-      queryKey: searchListQueryKey({ keyword, areaCode }),
+      queryKey: searchListQueryKey({ keyword, areaCode, contentTypeId }),
       queryFn: ({ pageParam = 1 }) => {
         if (!keyword) {
           return getSearchArea({
