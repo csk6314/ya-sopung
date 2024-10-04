@@ -7,7 +7,7 @@ import {
   useInfiniteQuery,
 } from "@tanstack/react-query";
 
-import { getSearchKeyword } from "@/api";
+import { getSearchArea, getSearchKeyword } from "@/api";
 import { KeywordData } from "@/api/api";
 import { useInView } from "react-intersection-observer";
 
@@ -16,6 +16,22 @@ interface UseSearchListProps {
   areaCode: string;
   contentTypeId: string;
 }
+
+const searchListQueryKey = ({
+  keyword,
+  areaCode,
+}: Omit<UseSearchListProps, "contentTypeId">) => {
+  const queryKeyObj: {
+    [k: string]: string;
+  } = {};
+  if (keyword) {
+    queryKeyObj["keyword"] = keyword;
+  }
+  if (areaCode) {
+    queryKeyObj["areaCode"] = areaCode;
+  }
+  return ["search", queryKeyObj];
+};
 
 const useSearchList = ({
   keyword,
@@ -32,8 +48,15 @@ const useSearchList = ({
       QueryKey,
       number
     >({
-      queryKey: ["search", { keyword, areaCode }],
+      queryKey: searchListQueryKey({ keyword, areaCode }),
       queryFn: ({ pageParam = 1 }) => {
+        if (!keyword) {
+          return getSearchArea({
+            pageNo: pageParam,
+            contentTypeId,
+            areaCode,
+          });
+        }
         return getSearchKeyword({
           pageNo: pageParam,
           contentTypeId,
