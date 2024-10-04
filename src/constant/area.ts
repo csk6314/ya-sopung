@@ -1,4 +1,9 @@
-export const AREA_CODE = [
+export type AreaType = {
+  code: string;
+  name: string;
+};
+
+export const AREA_CODE: AreaType[] = [
   {
     code: "0",
     name: "전체",
