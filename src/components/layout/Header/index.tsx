@@ -1,14 +1,26 @@
+import { Link, useLocation } from "react-router-dom";
+
+//assets
 import LogoPurple from "@/assets/logo_purple.png";
 import LogoWhite from "@/assets/logo_white.png";
-import { ROUTES } from "../../../constant/routes";
-import { Link, useLocation } from "react-router-dom";
+
+//style
 import styles from "./index.style";
+
+//state
+import { useAreaStore } from "@/store/area";
+
+//util
 import { isColoredHeader, isNavActive } from "./util";
+
+//constant
+import { ROUTES } from "../../../constant/routes";
 
 const Header = () => {
   const location = useLocation();
   const isColored = isColoredHeader(location.pathname);
-  console.log(isColored);
+  const { setArea } = useAreaStore((state) => state.actions);
+
   return (
     <styles.Header>
       <styles.Wrapper>
@@ -29,6 +41,9 @@ const Header = () => {
                 href: route.href,
                 path: location.pathname,
               })}
+              onClick={() => {
+                setArea({ name: "전체", code: "0" });
+              }}
             >
               {route.title}
             </styles.NavItem>
