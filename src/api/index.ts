@@ -52,7 +52,7 @@ export const getSearchKeyword = async ({
     },
   } = await api.get<APIResponse<KeywordData>>("/searchKeyword1", {
     params: {
-      numOfRows: 4,
+      numOfRows: 5,
       pageNo,
       listYN: "Y",
       arrange: "D",
