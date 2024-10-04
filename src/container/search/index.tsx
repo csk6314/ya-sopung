@@ -1,11 +1,16 @@
+//component
 import AreaSelect from "@/components/AreaSelect";
-import * as S from "./index.style";
 import SearchInput from "@/components/SearchInput";
-import useParams from "@/hooks/useParams";
-import { CTYPE_CONSTANT } from "@/constant/content";
-import useSearchList from "@/hooks/useSearchList";
 import Spinner from "@/components/Spinner";
 import ListItem from "@/components/ListItem";
+import SearchTitle from "./SearchTitle";
+
+//style
+import * as S from "./index.style";
+
+//hook
+import useParams from "@/hooks/useParams";
+import useSearchList from "@/hooks/useSearchList";
 
 const SearchContainer = () => {
   const { contentType, keyword, area } = useParams();
@@ -25,19 +30,11 @@ const SearchContainer = () => {
   return (
     <S.Container>
       <S.Wrapper>
-        <h3>
-          {keyword ? (
-            <>
-              <em>{area.name === "전체" ? "모든 지역" : area.name}</em>의{" "}
-              <em>'서울뮤직페스티벌'</em>에 대한 검색 결과입니다.
-            </>
-          ) : (
-            <>
-              <em>{area.name === "전체" ? "모든 지역" : area.name}</em>의{" "}
-              <em>{CTYPE_CONSTANT[contentType].tag}</em> 알아보기
-            </>
-          )}
-        </h3>
+        <SearchTitle
+          areaName={area.name}
+          keyword={keyword}
+          contentType={contentType}
+        />
         <S.SearchDiv>
           <AreaSelect />
           <SearchInput contenttypeid={contentType} />
