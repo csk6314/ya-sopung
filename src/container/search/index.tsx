@@ -37,7 +37,7 @@ const SearchContainer = () => {
         />
         <S.SearchDiv>
           <AreaSelect />
-          <SearchInput contenttypeid={contentType} />
+          <SearchInput contenttypeid={contentType} initialValue={keyword} />
         </S.SearchDiv>
         <S.SearchList>
           {items.map((item) => (

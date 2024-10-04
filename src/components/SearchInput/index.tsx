@@ -16,15 +16,17 @@ import { CiSearch } from "react-icons/ci";
 interface Props {
   usage?: "default" | "home";
   placeholder?: string;
+  initialValue?: string;
   contenttypeid: TContentType;
 }
 
 const SearchInput = ({
   usage = "default",
   placeholder,
+  initialValue,
   contenttypeid,
 }: Props) => {
-  const [keyword, setKeyword] = useState<string>("");
+  const [keyword, setKeyword] = useState<string>(initialValue ?? "");
   const [focused, setFocused] = useState<boolean>(false);
   const area = useAreaStore((state) => state.area);
   const navigate = useNavigate();
