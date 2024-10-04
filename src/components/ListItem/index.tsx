@@ -1,5 +1,6 @@
 import Button from "../Button";
 import LikeButton from "../Button/LikeButton";
+import Thumbnail from "../Thumbnail";
 import * as S from "./index.style";
 
 import { KeywordData } from "@/api/api";
@@ -13,7 +14,7 @@ const ListItem = ({
 }: KeywordData) => {
   return (
     <S.Wrapper>
-      <S.Thumbnail $imgURL={firstimage} />
+      <Thumbnail src={firstimage} />
       <S.Description>
         <h3>{title}</h3>
         <span>{addr1}</span>
