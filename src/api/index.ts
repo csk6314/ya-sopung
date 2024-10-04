@@ -46,6 +46,7 @@ export const getSearchKeyword = async ({
       response: {
         body: {
           items: { item: items },
+          numOfRows,
         },
       },
     },
@@ -62,8 +63,12 @@ export const getSearchKeyword = async ({
     },
   });
 
-  return items.map(({ contentid, contenttypeid }) => {
-    return { contentid, contenttypeid };
+  if (numOfRows < 1) {
+    return [];
+  }
+
+  return items.map(({ contentid, title, firstimage, addr1, addr2 }) => {
+    return { contentid, title, firstimage, addr1, addr2 };
   });
 };
 

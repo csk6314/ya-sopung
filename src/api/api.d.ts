@@ -17,7 +17,10 @@ export interface APIResponse<T> {
 
 export interface KeywordData {
   contentid: string;
-  contenttypeid: string;
+  addr1: string;
+  addr2: string;
+  firstimage: string;
+  title: string;
 }
 
 // export interface KeywordData {
