@@ -5,6 +5,10 @@ export const InputWrapper = styled.div<{ $usage: string; $focused: boolean }>`
   align-items: center;
   padding-right: 1.5rem;
 
+  & > svg {
+    cursor: pointer;
+  }
+
   ${({ $usage, $focused, theme }) => {
     if ($usage === "home") {
       return css`
