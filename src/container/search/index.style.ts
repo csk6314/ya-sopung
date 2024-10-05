@@ -1,4 +1,4 @@
-import { FlexCenter, WrapperStyle } from "@/styles/mixin";
+import { WrapperStyle } from "@/styles/mixin";
 import styled from "styled-components";
 
 export const Container = styled.main`
