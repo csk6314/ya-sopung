@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 //style
@@ -36,18 +36,24 @@ const SearchInput = ({
   };
 
   const handleSearch = () => {
-    const searchParams = new URLSearchParams({
-      area: area.code,
-    });
+    const searchParams = new URLSearchParams({});
 
     if (keyword.trim()) {
       searchParams.append("keyword", keyword);
+    }
+
+    if (area.code !== "0") {
+      searchParams.append("area", area.code);
     }
 
     navigate(
       `${CTYPE_CONSTANT[contenttypeid].router}?${searchParams.toString()}`
     );
   };
+
+  useEffect(() => {
+    setKeyword(initialValue ?? "");
+  }, [initialValue]);
 
   return (
     <S.InputWrapper $usage={usage} $focused={focused}>
