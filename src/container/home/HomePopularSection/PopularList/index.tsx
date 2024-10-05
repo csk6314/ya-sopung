@@ -9,6 +9,7 @@ import { SwiperWrapper } from "./index.style";
 
 //constant
 import { POPULAR } from "@/constant/popular";
+import { Link } from "react-router-dom";
 
 const PopularList = () => {
   return (
@@ -36,7 +37,14 @@ const PopularList = () => {
       >
         {POPULAR.map((popular) => (
           <SwiperSlide key={popular.keyword}>
-            <AreaCard src={popular.src} keyword={popular.keyword} />
+            <Link
+              to={`/festival?keyword=${popular.keyword}`}
+              onClick={() => {
+                window.scrollTo({ top: 0 });
+              }}
+            >
+              <AreaCard src={popular.src} keyword={popular.keyword} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
