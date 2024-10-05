@@ -41,7 +41,9 @@ const useSearchList = ({
   areaCode,
   contentTypeId,
 }: UseSearchListProps) => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
 
   const { data, fetchNextPage, isLoading, isError, isFetchingNextPage } =
     useInfiniteQuery<
@@ -57,7 +59,7 @@ const useSearchList = ({
           return getSearchArea({
             pageNo: pageParam,
             contentTypeId,
-            areaCode,
+            areaCode: areaCode === "0" ? "" : areaCode,
           });
         }
         return getSearchKeyword({
