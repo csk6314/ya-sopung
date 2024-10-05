@@ -12,3 +12,11 @@ export const LoadingWrapper = styled.div`
   padding-top: 4rem;
   ${FlexCenter};
 `;
+
+export const NoSearchWrapper = styled.div`
+  ${FlexCenter};
+  padding: 10rem 0;
+  flex-direction: column;
+  font-size: 2.25rem;
+  color: ${({ theme }) => theme.colors["textParagraph-2"]};
+`;
