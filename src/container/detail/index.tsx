@@ -5,15 +5,25 @@ import * as S from "./index.style";
 import DetailContent from "./DetailContent";
 import LikeButton from "@/components/Button/LikeButton";
 import Button from "@/components/Button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import useDetailInfo from "@/hooks/useDetailInfo";
+import DetailTitle from "./DetailTitle";
 
 const Detail = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const { data } = useDetailInfo(id ?? "");
 
   return (
     <S.DetailContainer>
       <S.Wrapper>
-        <DetailContent />
+        <DetailTitle
+          contentType={data.contenttypeid}
+          title={data.title}
+          addr1={data.addr1}
+          addr2={data.addr2}
+        />
+        <DetailContent data={data} />
         <Button
           skin="default"
           onClick={() => {
@@ -22,7 +32,13 @@ const Detail = () => {
         >
           리스트로 가기
         </Button>
-        <LikeButton liked={true} />
+        <LikeButton
+          title={data.title}
+          addr1={data.addr1}
+          firstimage={data.firstimage}
+          contentId={data.contentid}
+          contentTypeId={data.contenttypeid}
+        />
       </S.Wrapper>
     </S.DetailContainer>
   );
