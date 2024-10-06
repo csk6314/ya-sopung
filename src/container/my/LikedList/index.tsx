@@ -4,15 +4,10 @@ import "swiper/css/scrollbar";
 import * as S from "./index.style";
 import LikedCard from "@/components/LikedCard";
 import { Scrollbar } from "swiper/modules";
+import { LikedContentInfo } from "@/hooks/useLiked";
 
 interface Props {
-  likeds: {
-    id: number;
-    title: string;
-    date: string;
-    place: string;
-    imgURL: string;
-  }[];
+  likeds: LikedContentInfo[];
 }
 
 const LikedList = ({ likeds }: Props) => {
@@ -25,12 +20,13 @@ const LikedList = ({ likeds }: Props) => {
         modules={[Scrollbar]}
       >
         {likeds.map((liked) => (
-          <SwiperSlide key={liked.id}>
+          <SwiperSlide key={liked.contentId}>
             <LikedCard
+              contentId={liked.contentId}
+              contentTypeId={liked.contentTypeId}
               title={liked.title}
-              date={liked.date}
-              place={liked.place}
-              imgURL={liked.imgURL}
+              addr1={liked.addr1}
+              firstimage={liked.firstimage}
             />
           </SwiperSlide>
         ))}

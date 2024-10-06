@@ -1,22 +1,24 @@
+import { LikedContentInfo } from "@/hooks/useLiked";
+import Thumbnail from "../Thumbnail";
 import * as S from "./index.style";
+import { Link } from "react-router-dom";
 
-interface Props {
-  title: string;
-  date: string;
-  place: string;
-  imgURL?: string;
-}
-
-const LikedCard = ({ title, date, place, imgURL = "" }: Props) => {
+const LikedCard = ({
+  contentId,
+  title,
+  addr1,
+  firstimage,
+}: LikedContentInfo) => {
   return (
-    <S.Wrapper>
-      <S.Thumbnail $imgURL={imgURL} />
-      <S.Describe>
-        <h4>{title}</h4>
-        <span>{date}</span>
-        <span>{place}</span>
-      </S.Describe>
-    </S.Wrapper>
+    <Link to={`/detail/${contentId}`}>
+      <S.Wrapper>
+        <Thumbnail src={firstimage} usage="my" />
+        <S.Describe>
+          <h4>{title}</h4>
+          <span>{addr1}</span>
+        </S.Describe>
+      </S.Wrapper>
+    </Link>
   );
 };
 
