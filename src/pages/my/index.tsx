@@ -1,5 +1,7 @@
+import My from "@/container/my";
+
 const MyPage = () => {
-  return <div>MyPage</div>;
+  return <My />;
 };
 
 export default MyPage;
