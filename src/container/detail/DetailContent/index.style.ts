@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import NoImage from "@/assets/no-image.png";
 
 export const ContentWrapper = styled.div`
   padding: 0 7.75rem;
@@ -28,18 +27,10 @@ export const ContentDescribeBox = styled.div`
     margin-bottom: 0.5rem;
   }
 
-  & p {
+  & p,
+  & a {
     font-size: 0.875rem;
+    line-height: 1.2;
     color: ${({ theme }) => theme.colors["textParagraph-2"]};
   }
-`;
-
-export const ContentImage = styled.div`
-  width: 22.5rem;
-  height: 17.5rem;
-  background-image: url(${NoImage});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #d9d9d9;
-  border-radius: 0.5rem;
 `;
