@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SwiperWrapper = styled.div`
-  width: calc(100% + var(--margin-width) - 0.5rem);
+  width: calc(100% + var(--margin-width) - 1rem);
   --margin-width: calc((100vw - 100%) / 2);
 
   .swiper-slide {
