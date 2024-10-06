@@ -5,6 +5,10 @@ export type TInfoItem = {
   content: string;
 };
 
+const getDateFormatString = (date: string) => {
+  return `${date.slice(0, 4)}.${date.slice(4, 6)}.${date.slice(6)}`;
+};
+
 const validateHomepage = (homepage: string) => {
   if (!homepage) {
     return "";
@@ -50,7 +54,9 @@ export const getInfoList = (data: TInfoData): TInfoItem[] => {
       },
       {
         title: "운영기간",
-        content: `${data.eventstartdate} ~ ${data.eventenddate}`,
+        content: `${getDateFormatString(
+          data.eventstartdate
+        )} ~ ${getDateFormatString(data.eventenddate)}`,
       },
       {
         title: "운영시간",
