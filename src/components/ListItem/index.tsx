@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button";
 import LikeButton from "../Button/LikeButton";
 import Thumbnail from "../Thumbnail";
@@ -22,7 +23,9 @@ const ListItem = ({
       </S.Description>
       <S.UserItems>
         <LikeButton liked={true} />
-        <Button skin="primary">상세보기</Button>
+        <Link to={`/detail/${contentid}`}>
+          <Button skin="primary">상세보기</Button>
+        </Link>
       </S.UserItems>
     </S.Wrapper>
   );
