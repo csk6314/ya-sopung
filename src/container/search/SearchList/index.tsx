@@ -42,6 +42,7 @@ const SearchList = ({ keyword, areaCode, contentType }: Props) => {
         {items.map((item) => (
           <ListItem
             contentid={item.contentid}
+            contenttypeid={item.contenttypeid}
             key={item.contentid}
             title={item.title}
             firstimage={item.firstimage}

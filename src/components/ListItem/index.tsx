@@ -8,6 +8,7 @@ import { KeywordData } from "@/api/api";
 
 const ListItem = ({
   contentid,
+  contenttypeid,
   title,
   firstimage,
   addr1,
@@ -22,7 +23,13 @@ const ListItem = ({
         <span>{addr2 === "" ? "-" : addr2}</span>
       </S.Description>
       <S.UserItems>
-        <LikeButton liked={true} />
+        <LikeButton
+          contentId={contentid}
+          contentTypeId={contenttypeid}
+          title={title}
+          firstimage={firstimage}
+          addr1={addr1}
+        />
         <Link to={`/detail/${contentid}`}>
           <Button skin="primary">상세보기</Button>
         </Link>
