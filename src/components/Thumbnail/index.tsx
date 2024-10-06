@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as S from "./index.style";
 
 interface Props {
-  usage?: "list" | "detail";
+  usage?: "list" | "detail" | "my";
   src: string;
 }
 const Thumbnail = ({ usage = "list", src }: Props) => {
