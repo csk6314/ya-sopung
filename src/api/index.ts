@@ -1,5 +1,12 @@
 import axios from "axios";
-import { APIResponse, CommonDetailData, KeywordData } from "./api";
+import {
+  AccommodationIntroDetailData,
+  APIResponse,
+  AttractionIntroDetailData,
+  CommonDetailData,
+  FestivalIntroDetailData,
+  KeywordData,
+} from "./api";
 
 const API_KEY = import.meta.env.VITE_API_DECODING_KEY;
 
@@ -119,6 +126,7 @@ export const getCommonDetail = async (
       response: {
         body: {
           items: { item },
+          numOfRows,
         },
       },
     },
@@ -130,32 +138,48 @@ export const getCommonDetail = async (
     },
   });
 
+  if (numOfRows < 1) {
+    return Promise.reject("No Contents");
+  }
   return item[0];
 };
 
-export const getDetailIntro = async <DataType>({
+export const getDetailIntro = async ({
   contentId,
   contentTypeId,
 }: {
   contentId: string;
   contentTypeId: string;
-}): Promise<DataType> => {
+}): Promise<
+  FestivalIntroDetailData &
+    AccommodationIntroDetailData &
+    AttractionIntroDetailData
+> => {
   const {
     data: {
       response: {
         body: {
           items: { item },
+          numOfRows,
         },
       },
     },
-  } = await api.get<APIResponse<DataType>>("/detailIntro1", {
+  } = await api.get<
+    APIResponse<
+      FestivalIntroDetailData &
+        AccommodationIntroDetailData &
+        AttractionIntroDetailData
+    >
+  >("/detailIntro1", {
     params: {
       ...COMMON_PARAM,
       contentId,
       contentTypeId,
     },
   });
-
+  if (numOfRows < 1) {
+    return Promise.reject("No Contents");
+  }
   return item[0];
 };
 export default api;
