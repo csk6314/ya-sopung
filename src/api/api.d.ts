@@ -1,3 +1,5 @@
+import { TContentType } from "@/constant/content";
+
 export interface APIResponse<T> {
   response: {
     header: {
@@ -32,7 +34,7 @@ export interface KeywordData {
 //   cat2: string;
 //   cat3: string;
 //   contentid: string;
-//   contenttypeid: string;
+//   contenttypeid: TContentType;
 //   createdtime: string;
 //   firstimage: string;
 //   firstimage2: string;
@@ -48,7 +50,7 @@ export interface KeywordData {
 
 export interface CommonDetailData {
   contentid: string;
-  contenttypeid: string;
+  contenttypeid: TContentType;
   title: string;
   createdtime: string;
   modifiedtime: string;
@@ -66,7 +68,7 @@ export interface CommonDetailData {
 }
 export interface FestivalIntroDetailData {
   contentid: string;
-  contenttypeid: string;
+  contenttypeid: TContentType;
   sponsor1: string;
   sponsor1tel: string;
   sponsor2: string;
@@ -89,7 +91,7 @@ export interface FestivalIntroDetailData {
 
 export interface AccommodationIntroDetailData {
   contentid: string;
-  contenttypeid: string;
+  contenttypeid: TContentType;
   goodstay: string;
   benikia: string;
   hanok: string;
@@ -124,7 +126,7 @@ export interface AccommodationIntroDetailData {
 
 export interface AttractionIntroDetailData {
   contentid: string;
-  contenttypeid: string;
+  contenttypeid: TContentType;
   heritage1: string;
   heritage2: string;
   heritage3: string;
@@ -141,3 +143,8 @@ export interface AttractionIntroDetailData {
   chkpet: string;
   chkcreditcard: string;
 }
+
+export type TInfoData = CommonDetailData &
+  FestivalIntroDetailData &
+  AccommodationIntroDetailData &
+  AttractionIntroDetailData;
