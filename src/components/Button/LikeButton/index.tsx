@@ -1,12 +1,27 @@
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+
+//style
 import * as S from "./index.style";
 
-interface Props {
-  liked: boolean;
-}
-const LikeButton = ({ liked }: Props) => {
+//hooks
+import useLiked, { LikedContentInfo } from "@/hooks/useLiked";
+
+const LikeButton = ({
+  contentId,
+  contentTypeId,
+  title,
+  firstimage,
+  addr1,
+}: LikedContentInfo) => {
+  const { liked, toggleLiked } = useLiked({
+    contentId,
+    contentTypeId,
+    title,
+    firstimage,
+    addr1,
+  });
   return (
-    <S.Wrapper>
+    <S.Wrapper onClick={toggleLiked}>
       {liked ? (
         <FaHeart color="#f75353" />
       ) : (
