@@ -19,6 +19,7 @@ export interface APIResponse<T> {
 
 export interface KeywordData {
   contentid: string;
+  contenttypeid: TContentType;
   addr1: string;
   addr2: string;
   firstimage: string;

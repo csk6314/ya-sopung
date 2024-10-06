@@ -74,9 +74,11 @@ export const getSearchKeyword = async ({
     return [];
   }
 
-  return items.map(({ contentid, title, firstimage, addr1, addr2 }) => {
-    return { contentid, title, firstimage, addr1, addr2 };
-  });
+  return items.map(
+    ({ contentid, contenttypeid, title, firstimage, addr1, addr2 }) => {
+      return { contentid, contenttypeid, title, firstimage, addr1, addr2 };
+    }
+  );
 };
 
 export const getSearchArea = async ({
@@ -113,9 +115,11 @@ export const getSearchArea = async ({
     return [];
   }
 
-  return items.map(({ contentid, title, firstimage, addr1, addr2 }) => {
-    return { contentid, title, firstimage, addr1, addr2 };
-  });
+  return items.map(
+    ({ contentid, contenttypeid, title, firstimage, addr1, addr2 }) => {
+      return { contentid, contenttypeid, title, firstimage, addr1, addr2 };
+    }
+  );
 };
 
 export const getCommonDetail = async (
