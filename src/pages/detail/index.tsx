@@ -6,7 +6,6 @@ import DetailError from "./error";
 
 const DetailPage = () => {
   useEffect(() => {
-    console.log("gd");
     window.scrollTo({ top: 0 });
   }, []);
 
