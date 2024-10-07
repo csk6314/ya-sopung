@@ -27,26 +27,32 @@ const LikedList = ({ contentTypeId }: Props) => {
   return (
     <S.MySection>
       <h3>내가 찜한 {listTitle} 목록</h3>
-      <S.SwiperWrapper>
-        <Swiper
-          scrollbar={{ hide: true }}
-          slidesPerView="auto"
-          spaceBetween={10}
-          modules={[Scrollbar]}
-        >
-          {likedList.map((liked) => (
-            <SwiperSlide key={liked.contentId}>
-              <LikedCard
-                contentId={liked.contentId}
-                contentTypeId={liked.contentTypeId}
-                title={liked.title}
-                addr1={liked.addr1}
-                firstimage={liked.firstimage}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </S.SwiperWrapper>
+      {likedList.length === 0 ? (
+        <S.NoContentsWrapper>
+          <span>찜 목록이 없습니다.</span>
+        </S.NoContentsWrapper>
+      ) : (
+        <S.SwiperWrapper>
+          <Swiper
+            scrollbar={{ hide: true }}
+            slidesPerView="auto"
+            spaceBetween={10}
+            modules={[Scrollbar]}
+          >
+            {likedList.map((liked) => (
+              <SwiperSlide key={liked.contentId}>
+                <LikedCard
+                  contentId={liked.contentId}
+                  contentTypeId={liked.contentTypeId}
+                  title={liked.title}
+                  addr1={liked.addr1}
+                  firstimage={liked.firstimage}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </S.SwiperWrapper>
+      )}
     </S.MySection>
   );
 };
