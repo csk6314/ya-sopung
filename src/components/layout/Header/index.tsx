@@ -15,6 +15,7 @@ import { isColoredHeader, isNavActive } from "./util";
 
 //constant
 import { ROUTES } from "../../../constant/routes";
+import { AREA_CODE } from "@/constant/area";
 
 const Header = () => {
   const location = useLocation();
@@ -42,7 +43,7 @@ const Header = () => {
                 path: location.pathname,
               })}
               onClick={() => {
-                setArea({ name: "전체", code: "0" });
+                setArea(AREA_CODE[0]);
               }}
             >
               {route.title}

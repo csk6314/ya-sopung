@@ -3,7 +3,7 @@ export type AreaType = {
   name: string;
 };
 
-export const AREA_CODE: AreaType[] = [
+export const AREA_CODE: Readonly<AreaType>[] = [
   {
     code: "0",
     name: "전체",

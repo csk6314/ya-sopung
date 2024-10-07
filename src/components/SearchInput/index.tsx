@@ -12,6 +12,7 @@ import { useAreaStore } from "@/store/area";
 
 //lib
 import { CiSearch } from "react-icons/ci";
+import { AREA_CODE } from "@/constant/area";
 
 interface Props {
   usage?: "default" | "home";
@@ -42,7 +43,7 @@ const SearchInput = ({
       searchParams.append("keyword", keyword);
     }
 
-    if (area.code !== "0") {
+    if (area.code !== AREA_CODE[0].code) {
       searchParams.append("area", area.code);
     }
 

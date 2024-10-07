@@ -9,11 +9,14 @@ const useParams = () => {
   const contentType =
     ROUTES.find((route) => route.href === pathname)?.contentType ?? "15";
   const keyword = searchParam.get("keyword") ?? "";
-  const code = searchParam.get("area") ?? "0";
-  const area = AREA_CODE.find((ac) => ac.code === code) ?? AREA_CODE[0];
+  const code = searchParam.get("area") ?? AREA_CODE[0].code;
+  let area = AREA_CODE.find((ac) => ac.code === code) ?? AREA_CODE[0];
 
-  if (area.code === "0") {
-    area.code = "";
+  if (area.code === AREA_CODE[0].code) {
+    area = {
+      code: "",
+      name: AREA_CODE[0].name,
+    };
   }
 
   return { contentType, keyword, area };

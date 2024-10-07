@@ -1,3 +1,4 @@
+import { AREA_CODE } from "@/constant/area";
 import { create } from "zustand";
 
 type TArea = {
@@ -16,10 +17,7 @@ interface Actions {
 }
 
 const initialState: State = {
-  area: {
-    code: "0",
-    name: "전체",
-  },
+  area: AREA_CODE[0],
 };
 
 export const useAreaStore = create<State & Actions>((set) => ({
