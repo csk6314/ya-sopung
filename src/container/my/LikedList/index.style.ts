@@ -13,3 +13,11 @@ export const SwiperWrapper = styled.div`
     background-color: rgba(0, 0, 0, 0.2);
   }
 `;
+export const MySection = styled.section`
+  margin-top: 5rem;
+
+  & > h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+`;

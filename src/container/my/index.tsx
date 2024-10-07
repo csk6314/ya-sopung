@@ -1,12 +1,10 @@
-import { getLikedList } from "@/hooks/useLiked";
+//style
 import * as S from "./index.style";
+
+//component
 import LikedList from "./LikedList";
 
 const My = () => {
-  const likedList = getLikedList();
-
-  console.log("gg");
-
   return (
     <S.MyContainer>
       <S.MyPageTitle>
@@ -14,26 +12,9 @@ const My = () => {
         <br /> <b>홍길동님!</b>
       </S.MyPageTitle>
 
-      <S.MySection>
-        <h3>내가 찜한 행사 목록</h3>
-        <LikedList
-          likeds={likedList.filter((content) => content.contentTypeId === "15")}
-        />
-      </S.MySection>
-
-      <S.MySection>
-        <h3>내가 찜한 숙소 목록</h3>
-        <LikedList
-          likeds={likedList.filter((content) => content.contentTypeId === "32")}
-        />
-      </S.MySection>
-
-      <S.MySection>
-        <h3>내가 찜한 관광지 목록</h3>
-        <LikedList
-          likeds={likedList.filter((content) => content.contentTypeId === "12")}
-        />
-      </S.MySection>
+      <LikedList contentTypeId="15" />
+      <LikedList contentTypeId="32" />
+      <LikedList contentTypeId="12" />
     </S.MyContainer>
   );
 };

@@ -14,12 +14,3 @@ export const MyPageTitle = styled(TitleText2)`
     font-weight: bold;
   }
 `;
-
-export const MySection = styled.section`
-  margin-top: 5rem;
-
-  & > h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
-  }
-`;
