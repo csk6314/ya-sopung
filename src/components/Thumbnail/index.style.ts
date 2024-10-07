@@ -9,6 +9,7 @@ export const Thumbnail = styled.div<{
     if ($usage === "list") {
       return css`
         width: 16rem;
+        height: 11.25rem;
         border-radius: 0.5rem;
       `;
     }

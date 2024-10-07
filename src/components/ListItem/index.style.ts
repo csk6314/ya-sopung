@@ -1,22 +1,16 @@
 import styled from "styled-components";
-import NoImage from "@/assets/no-image.png";
 
 export const Wrapper = styled.article`
   width: 100%;
   display: flex;
   column-gap: 2.5rem;
   position: relative;
-`;
 
-export const Thumbnail = styled.div<{ $imgURL: string }>`
-  width: 16rem;
-  background-image: ${({ $imgURL }) => ($imgURL ? `url(${$imgURL})` : "")},
-    url(${NoImage});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: #d9d9d9;
-  border-radius: 0.5rem;
+  @media ${({ theme }) => theme.mediaSize.md} {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
 `;
 
 export const Description = styled.div`
@@ -55,4 +49,8 @@ export const UserItems = styled.div`
   display: flex;
   align-items: center;
   column-gap: 1.25rem;
+
+  @media ${({ theme }) => theme.mediaSize.md} {
+    position: static;
+  }
 `;
