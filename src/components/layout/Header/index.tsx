@@ -7,20 +7,15 @@ import LogoWhite from "@/assets/logo_white.png";
 //style
 import styles from "./index.style";
 
-//state
-import { useAreaStore } from "@/store/area";
-
 //util
 import { isColoredHeader, isNavActive } from "./util";
 
 //constant
 import { ROUTES } from "../../../constant/routes";
-import { AREA_CODE } from "@/constant/area";
 
 const Header = () => {
   const location = useLocation();
   const isColored = isColoredHeader(location.pathname);
-  const { setArea } = useAreaStore((state) => state.actions);
 
   return (
     <styles.Header>
@@ -42,9 +37,6 @@ const Header = () => {
                 href: route.href,
                 path: location.pathname,
               })}
-              onClick={() => {
-                setArea(AREA_CODE[0]);
-              }}
             >
               {route.title}
             </styles.NavItem>
