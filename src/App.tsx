@@ -1,14 +1,20 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+//style
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+//components(pages)
 import Layout from "./components/layout";
 import HomePage from "./pages/home";
 import MyPage from "./pages/my";
 import NavBanner from "./components/NavBanner";
 import DetailPage from "./pages/detail";
+import SearchPage from "./pages/search";
+
+//lib
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import SearchPage from "./pages/search";
 
 const router = createBrowserRouter([
   {
