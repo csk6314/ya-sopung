@@ -10,6 +10,7 @@ import * as S from "./index.style";
 
 //constant
 import { TContentType, CTYPE_CONSTANT } from "@/constant/content";
+import { AREA_CODE } from "@/constant/area";
 
 const HomeSearchSection = () => {
   const [searchCategory, setSearchCategory] = useState<TContentType>("15");
@@ -29,7 +30,7 @@ const HomeSearchSection = () => {
 
         <S.SeachDiv>
           {/** Select */}
-          <AreaSelect usage="home" />
+          <AreaSelect usage="home" initialValue={AREA_CODE[0]} />
           {/** Input */}
           <SearchInput
             usage="home"

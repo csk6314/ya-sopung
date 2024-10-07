@@ -22,7 +22,7 @@ const SearchContainer = () => {
           contentType={contentType}
         />
         <S.SearchDiv>
-          <AreaSelect />
+          <AreaSelect initialValue={area} />
           <SearchInput contenttypeid={contentType} initialValue={keyword} />
         </S.SearchDiv>
         <SearchList

@@ -8,17 +8,25 @@ import * as S from "./index.style";
 import { useAreaStore } from "@/store/area";
 
 //constant
-import { AREA_CODE } from "@/constant/area";
+import { AREA_CODE, AreaType } from "@/constant/area";
 
 interface Props {
   usage?: "default" | "home";
+  initialValue?: AreaType;
 }
 
-const AreaSelect = ({ usage = "default" }: Props) => {
+const AreaSelect = ({ usage = "default", initialValue }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const listRef = useRef<HTMLDivElement>(null);
   const area = useAreaStore((state) => state.area);
   const { setArea } = useAreaStore((state) => state.actions);
+
+  useEffect(() => {
+    if (initialValue) {
+      setArea(initialValue);
+    }
+  }, []);
+
   useEffect(() => {
     const handleDocumentClick = (e: MouseEvent) => {
       if (
