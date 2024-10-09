@@ -44,7 +44,23 @@ const NavList = styled.nav<{ $isColored: boolean }>`
   color: ${({ $isColored, theme }) =>
     $isColored ? theme.colors.textBlack : theme.colors.textWhite};
   display: flex;
+  align-items: center;
   column-gap: 2.5rem;
+
+  & > button {
+    display: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  @media ${({ theme }) => theme.mediaSize.md} {
+    & > a {
+      display: none;
+    }
+
+    & > button {
+      display: block;
+    }
+  }
 `;
 
 const NavItem = styled(Link)<{ $isActive: boolean }>`

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 //assets
@@ -7,15 +8,23 @@ import LogoWhite from "@/assets/logo_white.png";
 //style
 import styles from "./index.style";
 
+//components
+import Gnb from "./Gnb";
+
 //util
 import { isColoredHeader, isNavActive } from "./util";
 
 //constant
 import { ROUTES } from "../../../constant/routes";
 
+//lib
+import { IoMenu } from "react-icons/io5";
+
 const Header = () => {
   const location = useLocation();
   const isColored = isColoredHeader(location.pathname);
+
+  const [showGnb, setShowGnb] = useState<boolean>(false);
 
   return (
     <styles.Header>
@@ -41,7 +50,18 @@ const Header = () => {
               {route.title}
             </styles.NavItem>
           ))}
+          <button>
+            <IoMenu
+              size={24}
+              onClick={() => {
+                setShowGnb(!showGnb);
+              }}
+            />
+          </button>
         </styles.NavList>
+
+        {/** GNB */}
+        {showGnb && <Gnb setShowGnb={setShowGnb} />}
       </styles.Wrapper>
     </styles.Header>
   );
