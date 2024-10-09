@@ -31,4 +31,14 @@ export const SeachDiv = styled.div`
   & > div:nth-child(2) {
     flex: 1;
   }
+
+  @media ${({ theme }) => theme.mediaSize.sm} {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+
+    & > div {
+      width: 100%;
+    }
+  }
 `;
