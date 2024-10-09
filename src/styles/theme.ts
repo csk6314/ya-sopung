@@ -21,6 +21,7 @@ const colors = {
   //button
   defaultButtonBorder: "rgba(59,45,181,0.11)",
   defaultButtonBg: "#FFFFFF",
+  hoverMainBgColor: "rgba(59,45,181,0.1)",
 };
 
 const fontSize = {
