@@ -24,21 +24,23 @@ const Detail = () => {
           addr2={data.addr2}
         />
         <DetailContent data={data} />
-        <Button
-          skin="default"
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          리스트로 가기
-        </Button>
-        <LikeButton
-          title={data.title}
-          addr1={data.addr1}
-          firstimage={data.firstimage}
-          contentId={data.contentid}
-          contentTypeId={data.contenttypeid}
-        />
+        <S.UserItemsWrapper>
+          <Button
+            skin="default"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            리스트로 가기
+          </Button>
+          <LikeButton
+            title={data.title}
+            addr1={data.addr1}
+            firstimage={data.firstimage}
+            contentId={data.contentid}
+            contentTypeId={data.contenttypeid}
+          />
+        </S.UserItemsWrapper>
       </S.Wrapper>
     </S.DetailContainer>
   );
