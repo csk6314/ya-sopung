@@ -20,6 +20,7 @@ export const Description = styled.div`
   justify-content: center;
   row-gap: 1rem;
   padding: 3rem 0;
+  width: 16rem;
 
   & > h3 {
     font-size: 1.25rem;
